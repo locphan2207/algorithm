@@ -3,8 +3,8 @@
 // Do not allocate extra space for another array,
 // you must do this by modifying the input array in-place with O(1) extra memory.
 
-var shifting = function(nums, i, j) {
-  for (; j < nums.length; i++, j++) {
+var shifting = function(nums, length, i, j) {
+  for (; j < length; i++, j++) {
       nums[i] = nums[j];
   }
 };
@@ -12,11 +12,11 @@ var shifting = function(nums, i, j) {
 var removeDuplicates = function(nums) {
   let length = nums.length;
   let i = 0;
-  while (i < length) {
+  while (i < length - 1) {
     if ( nums[i] === nums[i+1] ) {
       let j = i + 1;
       while ( nums[j] === nums[i]) j++;
-      shifting(nums, i+1, j);
+      shifting(nums, length, i+1, j);
       length = length - ( j - i ) + 1;
       console.log(length);
     }
@@ -26,6 +26,8 @@ var removeDuplicates = function(nums) {
 };
 
 let arr = [1,1,2];
+// i= 1
+// j= 2
 let length = removeDuplicates(arr);
 console.log(arr.slice(0, length));
 
