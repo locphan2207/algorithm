@@ -11,3 +11,22 @@ Ex: If we declare a variable inside for loop, it is not in scope of that for onl
 it is still in scope the the function that contains the for loop.
 - Re-define the variable in different blocks inside the same function is the same as
 re-assigning same variable with new value in a function.
+
+**Class**
+- Declare a class as a function with Capitalize name
+- To create instance variable, use `this.<variable>`
+- To create methods, use `<Class>.prototype = function() {...}` because when we put methods into prototype, it will be only create one instance of that method inside the prototype. Every instances of the class will look to that prototype to search for/use that method
+- Ex:
+```javascript
+  function Kitten(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  Kitten.prototype.meow = function () {
+    console.log(this.name + ' says "meow!"');
+  };
+
+  k1 = new Kitten("Earl", 2);
+  k2 = new Kitten("Houdini", 1);
+```
