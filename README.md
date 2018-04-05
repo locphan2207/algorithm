@@ -15,7 +15,8 @@ re-assigning same variable with new value in a function.
 **Class**
 - Declare a class as a function with Capitalize name
 - To create instance variable, use `this.<variable>`
-- To create methods, use `<Class>.prototype = function() {...}` because when we put methods into prototype, it will be only create one instance of that method inside the prototype. Every instances of the class will look to that prototype to search for/use that method
+- To create methods, use `<Class>.prototype = function() {...}` because when we put methods into `prototype`, it will be only create one instance of that method inside its `prototype`. Every instances of the class will look to that `prototype` to search for/use that method
+- `static` method is same as Class method, it can be called without the need of creating class instances
 - Ex:
 ```javascript
   function Kitten(name, age) {
@@ -30,3 +31,8 @@ re-assigning same variable with new value in a function.
   k1 = new Kitten("Earl", 2);
   k2 = new Kitten("Houdini", 1);
 ```
+
+**`Undefined` vs `null` vs undecleared**
+- Undecleared: Never decleare a name of a variable
+- Undefined: Just decleare a variable, but no assign it to a value or function
+- Null: variable with a value `null` means nothing in general.
