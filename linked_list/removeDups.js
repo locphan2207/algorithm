@@ -1,5 +1,8 @@
 // Write function to remove dups from a linked list.
-// Solve it if temporary buffer is not allowed
+// What if temporary buffer is not allowed?
+
+// ----If no hash table is allowed. Time will be O(n^2) because we gotta have
+// nested loop, one interating through array, one search for that current
 
 //----Solution: Hash table
 // Store nodes values into hash table, as we traverse the linked list,
@@ -7,6 +10,7 @@
 // if it is, remove the current Node, else, keep traversing.
 // Time: O(n)
 // Space: O(n)
+
 
 const {LinkedList, Node} = require('./LinkedList');
 
