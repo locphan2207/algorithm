@@ -13,6 +13,7 @@
 // The tricky part of this solution is to keep track of the previous node
 // in case we need to move current node to front, then we can update previous node.next
 // with the next node.
+// Time: O(n)
 
 const {LinkedList, Node} = require('./LinkedList');
 

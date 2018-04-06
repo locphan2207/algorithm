@@ -5,7 +5,7 @@
 // the deleting node to the left.
 // ex:
 // 4->5->6->7, delete 5, we replace 5 by 6, 6 by 7
-// 4->
+// Time: O(n)
 
 const {LinkedList, Node} = require('./LinkedList');
 
