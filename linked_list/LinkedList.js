@@ -28,9 +28,11 @@ LinkedList.prototype.forEach = function(callback) {
 };
 
 LinkedList.prototype.toString = function() {
+  let resultString = "";
   this.forEach(node => {
-    console.log(node.value);
+    resultString += `${node.value}->`;
   });
+  console.log(resultString);
 };
 
 module.exports = {LinkedList, Node};
