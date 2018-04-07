@@ -1,6 +1,7 @@
 function Node(value) {
   this.value = value;
   this.next = undefined;
+  this.hashString = `${(new Date()).getTime() * value * Math.random()}`; // to generate hash code
 }
 
 function LinkedList(headNode) {

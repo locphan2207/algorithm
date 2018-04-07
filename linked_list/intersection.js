@@ -11,6 +11,7 @@
 // ex: 2->3->4->5->6->7 and 1->5->6->7, these two intersects at node 5,
 // but they are 2-node different in length. so the first linked list pointers
 // should start first, then at node 4, the other pointer willstart
+// Time: O(2n) -> O(n)
 
 const {LinkedList, Node} = require('./LinkedList');
 
