@@ -30,7 +30,6 @@ Stack.prototype.push = function(value) {
 Stack.prototype.pop = function() {
   const deletingItem = this.array[this.length-1];
   this.array[--this.length] = undefined;
-  if (deletingItem === this.min)
   return deletingItem;
 };
 
