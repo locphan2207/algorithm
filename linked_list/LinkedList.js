@@ -1,8 +1,11 @@
 function Node(value) {
   this.value = value;
   this.next = undefined;
-  this.hashString = `${(new Date()).getTime() * value * Math.random()}`; // to generate hash code
 }
+
+Node.prototype.hashString = function() {
+  return `${(new Date()).getTime() * this.value * Math.random()}`; // to generate hash code
+};
 
 function LinkedList(headNode) {
   this.head = headNode;
@@ -31,9 +34,9 @@ LinkedList.prototype.forEach = function(callback) {
 LinkedList.prototype.toString = function() {
   let resultString = "";
   this.forEach(node => {
-    resultString += `${node.value}->`;
+    resultString += `->${node.value}`;
   });
-  console.log(resultString);
+  console.log(resultString.slice(2));
 };
 
 module.exports = {LinkedList, Node};

@@ -16,9 +16,9 @@ function loopDetection(list) {
   const hash = {};
   let currentNode = list.head;
   while(currentNode) {
-    if (hash[currentNode.hashString]) return currentNode;
+    if (hash[currentNode.hashString()]) return currentNode;
 
-    else hash[currentNode.hashString] = true;
+    else hash[currentNode.hashString()] = true;
     currentNode = currentNode.next;
   }
 }
