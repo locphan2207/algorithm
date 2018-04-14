@@ -21,11 +21,17 @@ Queue.prototype.transfer = function() {
   }
 };
 
-const a = new Queue();
-a.enqueue(4);
-a.enqueue(5);
-a.enqueue(6);
-a.enqueue(7);
-console.log(a);
-a.dequeue();
-console.log(a);
+Queue.prototype.length = function() {
+  return this.inStack.length + this.outStack.length;
+};
+
+module.exports = Queue;
+//
+// const a = new Queue();
+// a.enqueue(4);
+// a.enqueue(5);
+// a.enqueue(6);
+// a.enqueue(7);
+// console.log(a);
+// a.dequeue();
+// console.log(a);

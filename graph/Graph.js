@@ -15,7 +15,7 @@ function Vertex(value) {
 }
 
 Vertex.prototype.linkVetices = function(vertices) { // this function to link other vertices
-  this.adjacencies.push(vertices);
+  this.adjacencies = this.adjacencies.concat(vertices);
 };
 
 function Graph(vertices = []) {
@@ -32,13 +32,8 @@ function Graph(vertices = []) {
 // c.linkVetices([a,b,d]);
 // d.linkVetices([c]);
 //
-// console.log(a);
-// console.log(b);
-// console.log(c);
-// console.log(d);
-//
 // const g = new Graph([a,b,c,d]);
 //
 // console.log(g);
 
-module.exports = Graph;
+module.exports = {Graph, Vertex};
