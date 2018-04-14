@@ -1,3 +1,12 @@
+// Write a function to perform a Depth-first-seach.
+
+// ----Solution: Recurive
+// The idea is to traverse each vertex of the adjacencies until there
+// is no more adjacency. We have to keep track of which vertices we have vistied
+// Simply start from the given vertex, mark it as visited, then check its
+// neighbors. Each adjacency vertex, you run recursive funtion again if that
+// vertex is not visited before.
+
 const {Graph, Vertex} = require('./Graph');
 
 function dfs(vertex, visited = {}) {
