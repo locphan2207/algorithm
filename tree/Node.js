@@ -3,13 +3,22 @@ function Node(value, left, right) {
   this.left = left;
   this.right = right;
 }
+
+Node.prototype.inOrder = function(cb) {
+  // if (!this.left && !this.right) cb(this.value);
+  if (this.left) this.left.inOrder(cb);
+  cb(this);
+  if (this.right) this.right.inOrder(cb);
+};
+
+Node.prototype.printTreeInOrder = function() {
+  this.inOrder(node => console.log(node));
+};
 //
 // const a = new Node(4);
 // const b = new Node(5);
 // const c = new Node(6,a,b);
 //
-// console.log(c.value);
-// console.log(c.left);
-// console.log(c.right);
+// c.printTreeInOrder();
 
 module.exports = Node;
