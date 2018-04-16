@@ -25,6 +25,11 @@ Queue.prototype.length = function() {
   return this.inStack.length + this.outStack.length;
 };
 
+Queue.prototype.peak = function() {
+  if (this.inStack.length > 0) return this.inStack.peak();
+  else return this.outStack.array[0];
+};
+
 module.exports = Queue;
 //
 // const a = new Queue();

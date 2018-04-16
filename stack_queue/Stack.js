@@ -48,8 +48,11 @@ Stack.prototype.min = function() {
 // a.push(2);
 // a.push(10);
 // a.push(0);
-// console.log(a.min());
+// // console.log(a.min());
+// console.log(a.peak());
+// console.log(a.length);
 // a.pop();
-// console.log(a.min());
-
+// // console.log(a.min());
+// console.log(a.peak());
+// console.log(a.length);
 module.exports = Stack;
