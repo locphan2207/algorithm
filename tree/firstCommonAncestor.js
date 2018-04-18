@@ -17,10 +17,11 @@
 // if not, the given node must both be in either left or right subtree.
 // recursively call the function on that subtree where both nodes are in.
 // repeat until we find the common node.
-// Time: 
+// However, we still have to perfom so much repeat searching actions.
 
 const Node = require('./Node');
 
+// Solution 2:
 function firstCommonAncestor(root, node1, node2) {
   if ((hasNode(root.left, node1) && hasNode(root.right, node2)) ||
     (hasNode(root.left, node2) && hasNode(root.right, node1))) {
@@ -43,6 +44,33 @@ function hasNode(root, node) {
   if (root === node) return true;
   else return hasNode(root.left, node) || hasNode(root.right, node);
 }
+
+// Solution 3:
+// function firstCommonAncestor2(root, node1, node2) {
+//   if (!root) return false;
+//   if (root === node1) return node1;
+//   if (root === node2) return node2;
+//
+//   const leftResult = firstCommonAncestor2(root.left, node1, node2);
+//   console.log(leftResult);
+//   if (leftResult && leftResult !== node1 && leftResult !== node2) {
+//     return leftResult;
+//   }
+//
+//   const rightResult = firstCommonAncestor2(root.right, node1, node2);
+//   console.log(rightResult);
+//   if (rightResult && rightResult !== node1 && rightResult !== node2) {
+//     return rightResult;
+//   }
+//
+//   if (leftResult && rightResult) {
+//     return root;
+//   }
+//
+//   if (!leftResult && !rightResult) {
+//     return false;
+//   }
+// }
 
 const a = new Node(3);
 const b = new Node(4);
