@@ -28,12 +28,17 @@ function buildOrder(projects, dependencies) {
 
   if (queue.length() < 1) return 'Cycle order, cannot build';
 
+  const visited = {};
   while (queue.length() > 0) {
     const current = queue.dequeue();
     result += ` ${current}`;
+    visited[current] = true;
     if (hash1[current]) {
       hash1[current].forEach(project => {
-        if (queue.peak() !== project) queue.enqueue(project);
+        if (!visited[project]) {
+          queue.enqueue(project);
+          visited[project] = true;
+        }
       });
     }
   }
@@ -42,5 +47,5 @@ function buildOrder(projects, dependencies) {
 }
 
 const projects = ['a','b','c','d','e','f'];
-const dependencies = [['a','d'],['f','b'],['b','d'],['f','a'],['d','c']];
+const dependencies = [['a','d'],['f','b'],['b','c'],['f','a'],['d','c']];
 console.log(buildOrder(projects, dependencies));
