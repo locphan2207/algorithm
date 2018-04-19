@@ -55,20 +55,20 @@ BinaryTree.prototype.remove = function(value) {
   }
 
   // find the leave of subtree from the deleting node:
-  const leave = this.pickLeave(deletingNode);
+  const leaf = this.pickLeaf(deletingNode);
 
   // Replace deleting node with picked leave in the tree:
-  if (prevNode.left === deletingNode) prevNode.left = leave;
-  if (prevNode.right === deletingNode) prevNode.right = leave;
-  leave.left = deletingNode.left;
-  leave.right = deletingNode.right;
+  if (prevNode.left === deletingNode) prevNode.left = leaf;
+  if (prevNode.right === deletingNode) prevNode.right = leaf;
+  leaf.left = deletingNode.left;
+  leaf.right = deletingNode.right;
   deletingNode.left = undefined;
   deletingNode.right = undefined;
 };
 
-// This function pick a leave of subtree starting from given node,
-// and cut that leave out of tree, and return that leave
-BinaryTree.prototype.pickLeave = function(node, prevNode) {
+// This function pick a leaf of subtree starting from given node,
+// and cut that leave out of tree, and return that leaf
+BinaryTree.prototype.pickLeaf = function(node, prevNode) {
   if (!node.left && !node.right) {
     if (prevNode) {
       if (prevNode.left === node) prevNode.left = undefined;
@@ -77,8 +77,8 @@ BinaryTree.prototype.pickLeave = function(node, prevNode) {
     return node;
   }
 
-  if (node.left) return this.pickLeave(node.left, node);
-  if (node.right) return this.pickLeave(node.right, node);
+  if (node.left) return this.pickLeaf(node.left, node);
+  if (node.right) return this.pickLeaf(node.right, node);
 };
 
 BinaryTree.prototype.randomNode = function() {
