@@ -83,7 +83,6 @@ BinaryTree.prototype.pickLeave = function(node, prevNode) {
 
 BinaryTree.prototype.randomNode = function() {
   const random = Math.floor(Math.random() * this.nodes.length);
-  console.log(random);
   return this.nodes[random];
 };
 
