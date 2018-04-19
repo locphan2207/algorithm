@@ -81,9 +81,9 @@ BinaryTree.prototype.pickLeave = function(node, prevNode) {
   if (node.right) return this.pickLeave(node.right, node);
 };
 
-
 BinaryTree.prototype.randomNode = function() {
-  const random = Math.random() * this.nodes.length;
+  const random = Math.floor(Math.random() * this.nodes.length);
+  console.log(random);
   return this.nodes[random];
 };
 
@@ -92,10 +92,13 @@ const a = new BinaryTree(new Node(1));
 a.insert(new Node(2));
 a.insert(new Node(3));
 a.insert(new Node(4));
-console.log(a);
+// console.log(a);
 
 a.remove(2);
-console.log(a.nodes);
+// console.log(a.nodes);
 
-console.log(a.find(2));
-console.log(a.find(3));
+// console.log(a.find(2));
+// console.log(a.find(3));
+
+a.insert(new Node(10));
+console.log(a.randomNode());
