@@ -9,12 +9,12 @@
 // For this problem, each cell has two previous result, one from the top cell,
 // one from the left cell, we have to add step to both, then combine them together.
 // Start from the destination, we look at the adjecency cell results
-// and add one more step into the results
+// and add one more step to them, then combine all into one and store them in hash
 
 function findPath(row, col, result = {'00': ['0,0']} ) {
   if (row === 0 && col === 0) return result[`${row}${col}`];
   if (result[`${row}${col}`]) return result[`${row}${col}`];
-  // console.log(result);
+
   let topPath = [];
   let leftPath = [];
   if (row-1 >= 0) {
@@ -34,9 +34,9 @@ function findPath(row, col, result = {'00': ['0,0']} ) {
     });
   }
   result[`${row}${col}`] = topPath.concat(leftPath);
-  // console.log(result);
   return result[`${row}${col}`];
 }
 
 console.log(findPath(1,1));
 console.log(findPath(2,2));
+console.log(findPath(3,3));
