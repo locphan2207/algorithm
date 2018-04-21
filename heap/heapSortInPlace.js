@@ -17,6 +17,7 @@ function heapifyUp(array, lastIdx) {
   let parentIdx = Math.floor((lastIdx-1)/2);
   while (currentIdx !== 0 && array[currentIdx] > array[parentIdx]) {
     [array[currentIdx], array[parentIdx]] = [array[parentIdx], array[currentIdx]];
+    console.log(array);
     currentIdx = parentIdx;
     parentIdx = Math.floor((lastIdx-1)/2);
   }
@@ -53,6 +54,7 @@ function findBiggestChildIdx(array, currentIdx, lastIdx) {
   else return idx2;
 }
 
-const a = [1,2,10,9,6,3,4,5,7,8];
+// const a = [1,2,3,2,9,6,10,3,4,5,7,8];
+const a = [1,3,3,2,4];
 heapSort(a);
 console.log(a);
