@@ -1,8 +1,15 @@
 // Implement a MAX heap
 
 function MaxHeap(array = []) {
-  this.array = array;
+  this.array = [];
+  this.insertArray(array);
 }
+
+MaxHeap.prototype.insertArray = function (array) {
+  for (let i = 0; i < array.length; i++) {
+    this.insert(array[i]);
+  }
+};
 
 MaxHeap.prototype.heapifyUp = function() {
   let currentIdx = this.array.length - 1; // last index of array
@@ -62,3 +69,6 @@ a.insert(90);
 console.log(a.array);
 a.extract();
 console.log(a.array);
+
+const b = new MaxHeap([4,10,4,2,49,100,2]);
+console.log(b.array);
