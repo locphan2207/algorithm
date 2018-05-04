@@ -36,3 +36,22 @@ re-assigning same variable with new value in a function.
 - Undecleared: Never decleare a name of a variable
 - Undefined: Just decleare a variable, but no assign it to a value or function
 - Null: variable with a value `null` means nothing in general.
+
+**`Async` and `await`**
+- They are ES6 syntax that has the same meaning as `.then` for Promise object
+- Ex, we have this ES5 function:
+```javascript
+function action() {
+    fetch('https://...')
+      .then(res => res.json())
+      .then(json => console.log(json));
+}
+```
+- In ES6, we can use `async/await` syntax like so:
+```javascript
+async function action() {
+    const res = await fetch('https://...');
+    const json = await res.json();
+    console.log(json);
+}
+```
