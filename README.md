@@ -1,6 +1,28 @@
 **Step to init a React app:**
 - Use create-react-app: `yarn create react-app <name>`
 - Install `prettier`, `eslint-plugin-prettier`, `stylelint`, `stylelint-prettier`
+- Add eslint config to `package.json`:
+```
+"eslintConfig": {
+    "extends": "react-app",
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "moduleDirectory": [
+            "node_modules",
+            "src/"
+          ]
+        }
+      }
+    }
+  },
+```
 - Create `jsconfig.json` with:
 ```
 {
