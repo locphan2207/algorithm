@@ -1,3 +1,33 @@
+**Step to init a React app:**
+- Use create-react-app: `yarn create react-app <name>`
+- Install `prettier`, `eslint-plugin-prettier`, `stylelint`, `stylelint-prettier`
+- Create `jsconfig.json` with:
+```
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": ["src"]
+}
+```
+- Create `.stylelintrc` with:
+```
+{
+  "plugins": ["stylelint-prettier"],
+  "rules": {
+    "prettier/prettier": true
+  }
+}
+```
+- Create `.prettierrc` with:
+```
+{
+  "semi": false,
+  "trailingComma": "es5"
+}
+```
+- Git init, create `.gitignore` for `node_modules`
+
 **ReSTful API:**
 - API that use HTTP request to get, create, update, or delete data from server to client.
 
